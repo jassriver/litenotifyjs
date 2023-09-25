@@ -1,0 +1,194 @@
+.litenotify {
+    position: fixed;
+    bottom: -500px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999998;
+    width: 500px;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, .5);
+    background: #27ae60;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 6px;
+    color: #fff;
+}
+.litenotify.show {
+    animation: linear .6s litenotifyUp forwards;
+}
+.litenotify.hide {
+    animation: linear .6s litenotifyDown forwards;
+}
+@keyframes litenotifyUp {
+    to {
+        bottom: 40px;
+    }
+}
+@keyframes litenotifyDown {
+    from {
+        bottom: 20px;
+    }
+    to {
+        bottom: -500px;
+    }
+}
+.litenotify_left {
+    width: calc(100% - 90px);
+    word-break: break-word;
+}
+.litenotify_right {
+    width: 80px;
+}
+.litenotify_close {
+    width: 80px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40px;
+    background: transparent;
+    border: 2px solid #fff;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .2s all ease;
+}
+.litenotify_close:hover {
+    background: #fff;
+    color: #27ae60;
+}
+.litenotify.confirm .litenotify_left {
+    width: calc(100% - 160px);
+}
+.litenotify.confirm .litenotify_right {
+    display: flex;
+    width: 150px;
+}
+.litenotify.confirm .litenotify_right .litenotify_close {
+    width: 75px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer;
+    transition: .2s all ease;
+    background: #e74c3c;
+    border: none;
+    margin-right: 10px;
+}
+.litenotify.confirm .litenotify_right .litenotify_close:hover {
+    background: #fff;
+    color: #2ecc71;
+}
+.litenotify_confirm {
+    width: 75px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer;
+    transition: .2s all ease;
+    background: #2ecc71;
+}
+.litenotify_confirm:hover {
+    background: #fff;
+    color: #2ecc71;
+}
+.litenotify_header {
+    font-size: 14px;
+    font-weight: 600;
+}
+.litenotify_content {
+    font-size: 13px;
+    font-weight: 300;
+}
+.litenotify.success .litenotify_content {
+    color: #fff;
+}
+.litenotify.alert .litenotify_header {
+    color: #fff;
+}
+.litenotify.alert .litenotify_content {
+    color: #fff
+}
+.litenotify.error .litenotify_content {
+    color: #fff;
+}
+.litenotify.success {
+    background: #27ae60;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(39, 174, 96, .56);
+    justify-content: center;
+    text-align: center;
+}
+.litenotify.success .litenotify_close {
+    background: #ecf0f1;
+    color: #2ecc71;
+}
+.litenotify.success .litenotify_close:hover {
+    color: #27ae60;
+}
+.litenotify.success .litenotify_header,
+.litenotify.error .litenotify_header {
+    color: #fff;
+    text-transform: capitalize;
+}
+.litenotify.alert {
+    background: #e67e22;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(255, 190, 99, .35);
+}
+.litenotify.alert .litenotify_close {
+    background: transparent;
+    color: #fff;
+    border-color: #fff;
+}
+.litenotify.alert .litenotify_close:hover {
+    background: #fff;
+    color: #e67e22;
+}
+.litenotify.error {
+    background: #c0392b;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(192, 57, 43, .52);
+}
+.litenotify.error .litenotify_close {
+    background: transparent;
+    color: #fff;
+    border-color: #fff;
+}
+.litenotify.error .litenotify_close:hover {
+    color: #c0392b;
+    background: #fff;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .litenotify {
+        width: 100%;
+        border-radius: 0;
+        box-shadow: none!important;
+    }
+    @keyframes litenotifyUp {
+        to {
+            bottom: 0;
+        }
+    }
+    @keyframes litenotifyDown {
+        from {
+            bottom: 0;
+        }
+        to {
+            top: 100%;
+        }
+    }
+}
