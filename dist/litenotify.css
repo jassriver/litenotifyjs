@@ -14,10 +14,10 @@
     border-radius: 6px;
     color: #fff;
 }
-.litenotify.show {
+.litenotify.ltn-show {
     animation: linear .6s litenotifyUp forwards;
 }
-.litenotify.hide {
+.litenotify.ltn-hide {
     animation: linear .6s litenotifyDown forwards;
 }
 @keyframes litenotifyUp {
