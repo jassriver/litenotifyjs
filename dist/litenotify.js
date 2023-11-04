@@ -29,7 +29,7 @@ function litenotify({
     }
 
     liteNotifyContext += `
-	<section class="litenotify show ${type}">
+	<section class="litenotify ltn-show ${type}">
         <section class="litenotify_left">
             <header class="litenotify_header">
                 ${title}
@@ -89,8 +89,8 @@ function litenotify({
     // Hide notify
     if (time > 0) {
         notifyTimeout = setTimeout(() => {
-            domLiteNotify.classList.remove("show");
-            domLiteNotify.classList.add("hide");
+            domLiteNotify.classList.remove("ltn-show");
+            domLiteNotify.classList.add("ltn-hide");
             notifyRemoveTimeout = setTimeout(() => {
                 domLiteNotify.remove();
             }, 700);
@@ -101,8 +101,8 @@ function litenotify({
     closeLiteNotify = document.querySelector(".litenotify_close");
 
     closeLiteNotify.addEventListener("click", (e) => {
-        domLiteNotify.classList.remove("show");
-        domLiteNotify.classList.add("hide");
+        domLiteNotify.classList.remove("ltn-show");
+        domLiteNotify.classList.add("ltn-hide");
         notifyRemoveTimeout = setTimeout(() => {
             window.clearTimeout(notifyTimeout);
             window.clearTimeout(notifyRemoveTimeout);
@@ -123,8 +123,8 @@ function litenotify({
                     callback();
                 });
             
-                domLiteNotify.classList.remove("show");
-                domLiteNotify.classList.add("hide");
+                domLiteNotify.classList.remove("ltn-show");
+                domLiteNotify.classList.add("ltn-hide");
                 notifyRemoveTimeout = setTimeout(() => {
                     // Restart Notifications
                     window.clearTimeout(notifyTimeout);
